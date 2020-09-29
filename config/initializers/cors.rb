@@ -8,9 +8,11 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'
+    # the origins is set to a wildcard which allows any URl to call on this back-end API and retrive whatever data necessary
 
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
+
